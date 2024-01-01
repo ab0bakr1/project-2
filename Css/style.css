@@ -1,0 +1,504 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+header .logo a{
+    font-size: 2rem;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-family: 'Carattere', cursive;
+}
+header .logo a span{
+    color: #1B6906;
+}
+header nav{
+    width: 50%;
+}
+header nav ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: 'Figtree', sans-serif;
+}
+header nav ul li a{
+    text-decoration: none;
+    color: #1B6906;
+    text-transform: uppercase;
+    position: relative;
+    padding: 5px 10px;
+    transition: 0.5s;
+}
+header nav ul li a::before{
+    content: "";
+    position: absolute;
+    border-style: solid;
+    left: 0;
+    top: 0;
+    transition: transform 0.3s;
+    border-width: 0 2px;
+    height: 100%;
+    width: 98%;
+    transform: scale3d(1,0,1);
+}
+header nav ul li a::after{
+    content: "";
+    position: absolute;
+    border-style: solid;
+    left: 0;
+    top: 0;
+    border-width: 2px 0;
+    height: 90%;
+    width: 100%;
+    transform: scale3d(0,1,1);
+    transform-origin: left;
+    transition: transform 0.4s;
+}
+header nav ul li a:hover::before{
+    transform: scale3d(1,1,1);
+}
+header nav ul li a:hover::after{
+    transform: scale3d(1,1,1);
+}
+header nav .dropdown{
+    position: relative;
+}
+header nav .dropdown .dropdown-menu{
+    position: absolute;
+    top: 200%;
+    left: 0;
+    background-color: white;
+    outline: #1B6906 2px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    opacity: 0;
+    transform: scale(0);
+    transition: .5s;
+}
+header nav .dropdown .dropdown-menu .dropdown-title{
+    padding: 5px 0;
+    margin: 0 50px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #1B6906;
+}
+header nav .dropdown .dropdown-menu li ul{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+header nav .dropdown .dropdown-menu li ul .dropdown-item{
+    color: #1b690685;
+    text-decoration: none;
+    padding: 5px 0;
+    text-transform: capitalize;
+}
+header nav .dropdown:hover .dropdown-menu{
+    transform: scale(1);
+    opacity: 1;
+}
+header .header-icon i{
+    font-size: 1.5rem;
+    padding: 0 10px;
+    cursor: pointer;
+}
+header .header-icon .cart{
+    position: relative;
+}
+header .header-icon .cart span{
+    position: absolute;
+    top: 0;
+    right: 10px;
+    transform: translate(50%,-50%);
+    background-color: #1B6906;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+}
+/* hero */
+.hero{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: url(../img/backhero.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 10px 50px;
+}
+.hero .hero-text h1{
+    font-size: 5rem;
+    color: #fff;
+}
+.hero .hero-text h2{
+    font-size: 2.5rem;
+    color: #fff;
+}
+.hero .hero-text button{
+    padding: 10px 20px;
+    margin-top: 50px;
+    border: none;
+    outline: none;
+    background-color: #fff;
+    color: #1B6906;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.hero .hero-img{
+    margin: 50px 0;
+}
+/* Special Products */
+.special h2{
+    text-align: center;
+    text-transform: uppercase;
+    color: #000;
+    font-size: 2rem;
+    margin: 50px 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.special h2::after{
+    content: "";
+    display: block;
+    width: 8%;
+    height: 5px;
+    background-color: #1B6906;
+    margin: 10px auto;
+    border-radius: 5px;
+    transition: .4s ease-in-out;
+}
+.special:hover h2::after{
+    width: 15%;
+}
+.special .special-products{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.special .special-products .special-card{
+    width: 30%;
+    height: 50%;
+}
+.special .special-products .special-img{
+    background-color: #1b690654;
+}
+.special .special-products .special-text{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+}
+.special .special-products .special-text h4{
+    margin-top: 20px;
+    margin-bottom: 5px;
+    text-align: left;
+    color: #1b69066f;
+    font-size: 1.2rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.special .special-products .special-text p{
+    padding: 0 5px;
+    background-color: #1B6906;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .4s ease-in-out;
+    opacity: 0;
+}
+.special .special-products .special-card:hover .special-text p{
+    opacity: 1;
+}
+/* offers */
+.offers{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin: 30px 0;
+}
+.offers .Offers-info{
+    background-color: #1b690654;
+    width: 50%;
+    height: 100%;
+    padding: 10px;
+}
+.offers .Offers-info .Offers-title{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+}
+.offers .Offers-info .Offers-title i{
+    font-size: 3.5rem;
+    color: #1B6906;
+}
+.offers .Offers-info .Offers-title h4{
+    color: #000;
+    font-size: 1.5rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.offers .Offers-info .Offers-title h5{
+    color: #000;
+    font-size: 1rem;
+    text-transform: capitalize;
+    font-weight: 200;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.offers .Offers-info .Offers-text{
+    margin: 40px 0;
+    color: #000000c4;
+    font-size: 1.1rem;
+    font-weight: 200;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.offers .Offers-info .Offers-button{
+    display: flex;
+    justify-content: end;
+}
+.offers .Offers-info .Offers-button span{
+    width: 50px;
+    height: 2px;
+    background-color: #1B6906;
+    margin: 0 5px;
+}
+.offers .Offers-items{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    height: 100%;
+    width: 50%;
+}
+.offers .Offers-items .Offers-item{
+    background:url(../img/Offers2.png);
+    background-color: #1b690654;
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    width: 50%;
+    height: 260px;
+    padding: 10px;
+    transition: .5s ease-in-out;
+}
+.offers .Offers-items .Offers-item:nth-child(2){
+    background:url(../img/Offers1.png);
+    background-color: #1b690654;
+    background-size: contain;
+    background-position:bottom;
+    background-repeat: no-repeat;
+}
+.offers .Offers-items .Offers-item:hover{
+    transform: scale(1.1);
+}
+.offers .Offers-items .Offers-item h4{
+    color: #1B6906;
+    font-size: 1.2rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.offers .Offers-items .Offers-item h3{
+    color: #000;
+    font-size: 1.5rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-transform: uppercase;
+}
+/* features */
+.features{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.features .features-card{
+    padding: 0 40px;
+    border-left: #1B6906 1px solid;
+}
+.features .features-card:first-child{
+    border-left: none;
+}
+.features .features-card .features-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    position: relative;
+}
+.features .features-card .features-icon i:nth-child(1){
+    font-size:2.5rem;
+    color: transparent;
+}
+.features .features-card .features-icon i:nth-child(2){
+    font-size:2.5rem;
+    color: #1b690654;
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    transition: .4s;
+}
+.features .features-card .features-icon:hover i:nth-child(2){
+    opacity: 0;
+    top: -100%;
+    transition: .2s;
+}
+.features .features-card .features-icon i:nth-child(3){
+    font-size:2.5rem;
+    color: #1B6906;
+    opacity: 0;
+    top: 100%;
+    position: absolute;
+    transition: .4s;
+}
+.features .features-card .features-icon:hover i:nth-child(3){
+    opacity: 1;
+    top: 0;
+}
+.features .features-card .features-text{
+    margin-top: 10px;
+    text-align: center;
+}
+.features .features-card .features-text h3{
+    color: #000;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-bottom: 5px;
+}
+.features .features-card .features-text p{
+    color: #1b690654;
+    font-size: .9rem;
+    font-weight: 600;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+/* products */
+.products{
+    margin: 50px 0;
+}
+.products h2{
+    text-align: center;
+    text-transform: uppercase;
+    color: #000;
+    font-size: 2rem;
+    margin: 50px 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.products h2::after{
+    content: "";
+    display: block;
+    width: 8%;
+    height: 5px;
+    background-color: #1B6906;
+    margin: 10px auto;
+    border-radius: 5px;
+    transition: .4s ease-in-out;
+}
+.products:hover h2::after{
+    width: 15%;
+}
+.products .products-filter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    margin-bottom: 30px;
+}
+.products .products-filter h5{
+    color: #000;
+    font-size: 1.2rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.products .products-item{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.products .products-item .products-card{
+    width: 30%;
+    height: 50%;
+}
+.products .products-item .products-card .products-img{
+    background-color: #1b690654;
+    position: relative;
+    transition: .5s ease-in-out;
+    max-height: 80%;
+}
+.products .products-item .products-card .products-img .products-1{
+    transform: rotateY(90deg);
+    position: absolute;    
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: .5s ease-in-out;
+    background-color: #1b690654;
+}
+.products .products-item .products-card:hover .products-img .products-1{
+    transform: rotateY(0deg);
+}
+.products .products-item .products-card .products-img .products-1 img{
+    opacity: .5;
+}
+.products .products-item .products-card .products-img .products-1 .products-socail{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.products .products-item .products-card .products-img .products-1 .products-socail i{
+    font-size: 1.5rem;
+    padding: 10px;
+    background-color: #1B6906;
+    color: #fff;
+    cursor: pointer;
+}
+.products .products-item .products-card .products-text .products-star{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 5px;
+    margin: 5px 0;
+    color: yellow;
+}
+.products .products-item .products-card .products-text .products-title{
+    color: #1b690654;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: 1px;
+    margin: 5px 0;
+}
+.products .products-item .products-card .products-text .products-price{
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
